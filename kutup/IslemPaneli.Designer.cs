@@ -80,6 +80,7 @@
             this.Kullaniciguncellebtn.Text = "           Kullanıcı Güncelle";
             this.Kullaniciguncellebtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Kullaniciguncellebtn.UseVisualStyleBackColor = false;
+            this.Kullaniciguncellebtn.Click += new System.EventHandler(this.Kullaniciguncellebtn_Click);
             // 
             // kuleklebtn
             // 

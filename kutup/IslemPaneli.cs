@@ -73,5 +73,12 @@ namespace kutup
             ksil.MdiParent = this;
             ksil.Show();
         }
+
+        private void Kullaniciguncellebtn_Click(object sender, EventArgs e)
+        {
+            Kullaniciguncelle kguncel = new Kullaniciguncelle();
+            kguncel.MdiParent = this;
+            kguncel.Show();
+        }
     }
 }
