@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace kutup
+{
+    public partial class kulsilform : Form
+    {
+        public kulsilform()
+        {
+            InitializeComponent();
+        }
+        kutupEntities db = new kutupEntities();
+
+        public void Listele()
+        {
+            var kulveri = db.kullanicilar.ToList();
+            dataGridView1.DataSource = kulveri.ToList();
+
+        }
+        private void kulsilform_Load(object sender, EventArgs e)
+        {
+            Listele();
+        }
+
+        private void silbut_Click(object sender, EventArgs e)
+        {
+            int secilenid = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+            var kullanici = db.kullanicilar.Where(x => x.kullanici_id == secilenid).FirstOrDefault();
+            db.kullanicilar.Remove(kullanici);
+            db.SaveChanges();
+            Listele();
+        }
+    }
+}
