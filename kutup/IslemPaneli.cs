@@ -22,6 +22,10 @@ namespace kutup
             kuleklebtn.Visible = false;
             Kullaniciguncellebtn.Visible = false;
             Kullanicisilbtn.Visible = false;
+
+            kaynakeklebtn.Visible = false;
+            kaynaksilbtn.Visible = false;
+            kaynakguncellebtn.Visible = false;
             
         }
 
@@ -79,6 +83,28 @@ namespace kutup
             Kullaniciguncelle kguncel = new Kullaniciguncelle();
             kguncel.MdiParent = this;
             kguncel.Show();
+        }
+
+        private void kaynaklarbtn_Click(object sender, EventArgs e)
+        {
+            if (kaynakeklebtn.Visible == false)
+            {
+                kaynakeklebtn.Visible = true;
+                kaynaksilbtn.Visible = true;
+                kaynakguncellebtn.Visible = true;
+            }
+
+            else
+            {
+                kaynakeklebtn.Visible = false;
+                kaynaksilbtn.Visible = false;
+                kaynakguncellebtn.Visible = false;
+                
+            }
+           
+            kaynakliste kliste = new kaynakliste();
+            kliste.MdiParent = this;
+            kliste.Show();
         }
     }
 }

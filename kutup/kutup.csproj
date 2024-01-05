@@ -67,6 +67,12 @@
     <Compile Include="IslemPaneli.Designer.cs">
       <DependentUpon>IslemPaneli.cs</DependentUpon>
     </Compile>
+    <Compile Include="kaynakliste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kaynakliste.Designer.cs">
+      <DependentUpon>kaynakliste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullaniciguncelle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IslemPaneli.resx">
       <DependentUpon>IslemPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kaynakliste.resx">
+      <DependentUpon>kaynakliste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kullaniciekleform.resx">
       <DependentUpon>kullaniciekleform.cs</DependentUpon>
