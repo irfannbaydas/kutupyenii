@@ -27,5 +27,6 @@ namespace kutup
     
         public virtual DbSet<perskutupveritabani> perskutupveritabani { get; set; }
         public virtual DbSet<kullanicilar> kullanicilar { get; set; }
+        public virtual DbSet<kaynaklar> kaynaklar { get; set; }
     }
 }

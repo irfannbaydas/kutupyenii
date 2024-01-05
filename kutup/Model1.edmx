@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="kutupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kaynak_ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_yazar" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_yayinci" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_sayfasayisi" Type="int" />
+          <Property Name="kaynak_basimtarihi" Type="datetime" />
+        </EntityType>
         <EntityType Name="kullanicilar">
           <Key>
             <PropertyRef Name="kullanici_id" />
@@ -30,6 +41,7 @@
           <Property Name="personel_sfire" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="kutupModelStoreContainer">
+          <EntitySet Name="kaynaklar" EntityType="Self.kaynaklar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="perskutupveritabani" EntityType="Self.perskutupveritabani" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -53,6 +65,7 @@
         <EntityContainer Name="kutupEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="perskutupveritabani" EntityType="Self.perskutupveritabani" />
           <EntitySet Name="kullanicilar" EntityType="kutupModel.kullanicilar" />
+          <EntitySet Name="kaynaklar" EntityType="kutupModel.kaynaklar" />
         </EntityContainer>
         <EntityType Name="kullanicilar">
           <Key>
@@ -64,6 +77,17 @@
           <Property Name="kullanici_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kaynak_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yayinci" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_sayfasayisi" Type="Int32" />
+          <Property Name="kaynak_basimtarihi" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -94,6 +118,18 @@
                 <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
                 <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
                 <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kaynaklar">
+            <EntityTypeMapping TypeName="kutupModel.kaynaklar">
+              <MappingFragment StoreEntitySet="kaynaklar">
+                <ScalarProperty Name="kaynak_basimtarihi" ColumnName="kaynak_basimtarihi" />
+                <ScalarProperty Name="kaynak_sayfasayisi" ColumnName="kaynak_sayfasayisi" />
+                <ScalarProperty Name="kaynak_yayinci" ColumnName="kaynak_yayinci" />
+                <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
+                <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
+                <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

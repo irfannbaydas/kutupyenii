@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.kaynaksilbtn = new System.Windows.Forms.Button();
+            this.kaynakguncellebtn = new System.Windows.Forms.Button();
+            this.kaynakeklebtn = new System.Windows.Forms.Button();
+            this.kaynaklarbtn = new System.Windows.Forms.Button();
             this.Kullanicisilbtn = new System.Windows.Forms.Button();
             this.Kullaniciguncellebtn = new System.Windows.Forms.Button();
             this.kuleklebtn = new System.Windows.Forms.Button();
             this.Kullaniciislembtn = new System.Windows.Forms.Button();
             this.panelkullaniciadi = new System.Windows.Forms.Panel();
-            this.kaynaklarbtn = new System.Windows.Forms.Button();
-            this.kaynakeklebtn = new System.Windows.Forms.Button();
-            this.kaynakguncellebtn = new System.Windows.Forms.Button();
-            this.kaynaksilbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 633);
             this.panel1.TabIndex = 0;
+            // 
+            // kaynaksilbtn
+            // 
+            this.kaynaksilbtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.kaynaksilbtn.FlatAppearance.BorderSize = 0;
+            this.kaynaksilbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kaynaksilbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.kaynaksilbtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynaksilbtn.Image")));
+            this.kaynaksilbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kaynaksilbtn.Location = new System.Drawing.Point(0, 494);
+            this.kaynaksilbtn.Name = "kaynaksilbtn";
+            this.kaynaksilbtn.Size = new System.Drawing.Size(176, 72);
+            this.kaynaksilbtn.TabIndex = 12;
+            this.kaynaksilbtn.Text = "        Kaynak Sil";
+            this.kaynaksilbtn.UseVisualStyleBackColor = false;
+            this.kaynaksilbtn.Click += new System.EventHandler(this.kaynaksilbtn_Click);
+            // 
+            // kaynakguncellebtn
+            // 
+            this.kaynakguncellebtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.kaynakguncellebtn.FlatAppearance.BorderSize = 0;
+            this.kaynakguncellebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kaynakguncellebtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.kaynakguncellebtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynakguncellebtn.Image")));
+            this.kaynakguncellebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kaynakguncellebtn.Location = new System.Drawing.Point(0, 429);
+            this.kaynakguncellebtn.Name = "kaynakguncellebtn";
+            this.kaynakguncellebtn.Size = new System.Drawing.Size(176, 71);
+            this.kaynakguncellebtn.TabIndex = 11;
+            this.kaynakguncellebtn.Text = "            Kaynak Güncelle";
+            this.kaynakguncellebtn.UseVisualStyleBackColor = false;
+            this.kaynakguncellebtn.Click += new System.EventHandler(this.kaynakguncellebtn_Click);
+            // 
+            // kaynakeklebtn
+            // 
+            this.kaynakeklebtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.kaynakeklebtn.FlatAppearance.BorderSize = 0;
+            this.kaynakeklebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kaynakeklebtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.kaynakeklebtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynakeklebtn.Image")));
+            this.kaynakeklebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kaynakeklebtn.Location = new System.Drawing.Point(0, 364);
+            this.kaynakeklebtn.Name = "kaynakeklebtn";
+            this.kaynakeklebtn.Size = new System.Drawing.Size(176, 69);
+            this.kaynakeklebtn.TabIndex = 10;
+            this.kaynakeklebtn.Text = "        Kaynak Ekle";
+            this.kaynakeklebtn.UseVisualStyleBackColor = false;
+            this.kaynakeklebtn.Click += new System.EventHandler(this.kaynakeklebtn_Click);
+            // 
+            // kaynaklarbtn
+            // 
+            this.kaynaklarbtn.BackColor = System.Drawing.Color.DimGray;
+            this.kaynaklarbtn.FlatAppearance.BorderSize = 0;
+            this.kaynaklarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kaynaklarbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.kaynaklarbtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.kaynaklarbtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynaklarbtn.Image")));
+            this.kaynaklarbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kaynaklarbtn.Location = new System.Drawing.Point(0, 282);
+            this.kaynaklarbtn.Name = "kaynaklarbtn";
+            this.kaynaklarbtn.Size = new System.Drawing.Size(176, 83);
+            this.kaynaklarbtn.TabIndex = 9;
+            this.kaynaklarbtn.Text = "        Kaynaklar";
+            this.kaynaklarbtn.UseVisualStyleBackColor = false;
+            this.kaynaklarbtn.Click += new System.EventHandler(this.kaynaklarbtn_Click);
             // 
             // Kullanicisilbtn
             // 
@@ -137,68 +202,6 @@
             this.panelkullaniciadi.Name = "panelkullaniciadi";
             this.panelkullaniciadi.Size = new System.Drawing.Size(929, 59);
             this.panelkullaniciadi.TabIndex = 1;
-            // 
-            // kaynaklarbtn
-            // 
-            this.kaynaklarbtn.BackColor = System.Drawing.Color.DimGray;
-            this.kaynaklarbtn.FlatAppearance.BorderSize = 0;
-            this.kaynaklarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kaynaklarbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynaklarbtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.kaynaklarbtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynaklarbtn.Image")));
-            this.kaynaklarbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kaynaklarbtn.Location = new System.Drawing.Point(0, 282);
-            this.kaynaklarbtn.Name = "kaynaklarbtn";
-            this.kaynaklarbtn.Size = new System.Drawing.Size(176, 83);
-            this.kaynaklarbtn.TabIndex = 9;
-            this.kaynaklarbtn.Text = "        Kaynaklar";
-            this.kaynaklarbtn.UseVisualStyleBackColor = false;
-            this.kaynaklarbtn.Click += new System.EventHandler(this.kaynaklarbtn_Click);
-            // 
-            // kaynakeklebtn
-            // 
-            this.kaynakeklebtn.BackColor = System.Drawing.Color.Gainsboro;
-            this.kaynakeklebtn.FlatAppearance.BorderSize = 0;
-            this.kaynakeklebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kaynakeklebtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynakeklebtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynakeklebtn.Image")));
-            this.kaynakeklebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kaynakeklebtn.Location = new System.Drawing.Point(0, 364);
-            this.kaynakeklebtn.Name = "kaynakeklebtn";
-            this.kaynakeklebtn.Size = new System.Drawing.Size(176, 69);
-            this.kaynakeklebtn.TabIndex = 10;
-            this.kaynakeklebtn.Text = "        Kaynak Ekle";
-            this.kaynakeklebtn.UseVisualStyleBackColor = false;
-            // 
-            // kaynakguncellebtn
-            // 
-            this.kaynakguncellebtn.BackColor = System.Drawing.Color.Gainsboro;
-            this.kaynakguncellebtn.FlatAppearance.BorderSize = 0;
-            this.kaynakguncellebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kaynakguncellebtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynakguncellebtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynakguncellebtn.Image")));
-            this.kaynakguncellebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kaynakguncellebtn.Location = new System.Drawing.Point(0, 429);
-            this.kaynakguncellebtn.Name = "kaynakguncellebtn";
-            this.kaynakguncellebtn.Size = new System.Drawing.Size(176, 71);
-            this.kaynakguncellebtn.TabIndex = 11;
-            this.kaynakguncellebtn.Text = "            Kaynak Güncelle";
-            this.kaynakguncellebtn.UseVisualStyleBackColor = false;
-            // 
-            // kaynaksilbtn
-            // 
-            this.kaynaksilbtn.BackColor = System.Drawing.Color.Gainsboro;
-            this.kaynaksilbtn.FlatAppearance.BorderSize = 0;
-            this.kaynaksilbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kaynaksilbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynaksilbtn.Image = ((System.Drawing.Image)(resources.GetObject("kaynaksilbtn.Image")));
-            this.kaynaksilbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kaynaksilbtn.Location = new System.Drawing.Point(0, 494);
-            this.kaynaksilbtn.Name = "kaynaksilbtn";
-            this.kaynaksilbtn.Size = new System.Drawing.Size(176, 72);
-            this.kaynaksilbtn.TabIndex = 12;
-            this.kaynaksilbtn.Text = "        Kaynak Sil";
-            this.kaynaksilbtn.UseVisualStyleBackColor = false;
             // 
             // IslemPaneli
             // 

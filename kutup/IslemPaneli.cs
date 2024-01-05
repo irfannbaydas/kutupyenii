@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kutup.Kaynak;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,10 +102,34 @@ namespace kutup
                 kaynakguncellebtn.Visible = false;
                 
             }
-           
-            kaynakliste kliste = new kaynakliste();
+            kullanicilarform klisteform = new kullanicilarform();
+            klisteform.MdiParent = this;
+            klisteform.Show();
+
+            kaynaklarliste kliste = new kaynaklarliste();
             kliste.MdiParent = this;
             kliste.Show();
+        }
+
+        private void kaynakeklebtn_Click(object sender, EventArgs e)
+        {
+            kaynakekle kekle = new kaynakekle();
+            kekle.MdiParent = this;
+            kekle.Show();
+        }
+
+        private void kaynaksilbtn_Click(object sender, EventArgs e)
+        {
+            kaynaksil kSil = new kaynaksil();
+            kSil.MdiParent = this;
+            kSil.Show();    
+        }
+
+        private void kaynakguncellebtn_Click(object sender, EventArgs e)
+        {
+            kaynakguncelle kguncelle = new kaynakguncelle();
+            kguncelle.MdiParent = this;
+            kguncelle.Show();
         }
     }
 }

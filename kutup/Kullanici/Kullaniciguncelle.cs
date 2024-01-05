@@ -35,13 +35,7 @@ namespace kutup
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            kuladtxt.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            kulsoyadtxt.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            kultctxt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            kulmailtxt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            kulteltxt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-
-            
+     
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +51,16 @@ namespace kutup
             db.SaveChanges();
             Listele();
         }
-            
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+         kuladtxt.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            kulsoyadtxt.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            kultctxt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            kulmailtxt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            kulteltxt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
+          
+        }
     }
 }

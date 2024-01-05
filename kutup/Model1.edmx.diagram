@@ -7,6 +7,7 @@
       <Diagram DiagramId="aebb45e82df84653ac9b82a2c0816850" Name="Diagram1">
         <EntityTypeShape EntityType="kutupModel.perskutupveritabani" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kutupModel.kullanicilar" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="kutupModel.kaynaklar" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -16,9 +16,11 @@ namespace kutup
         {
             InitializeComponent();
         }
+
+        kutupEntities db = new kutupEntities();
         public void Listele()
         {
-           kutupEntities db = new kutupEntities();
+           
             var kullanicilar = db.kullanicilar.ToList();
             dataGridView1.DataSource = kullanicilar.ToList();
         }
