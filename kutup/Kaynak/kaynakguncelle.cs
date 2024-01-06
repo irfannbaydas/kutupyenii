@@ -31,5 +31,9 @@ namespace kutup.Kaynak
             dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[5].Value);
         }
 
+        private void kaynakaydetbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

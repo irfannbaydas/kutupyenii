@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="kutupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kayitlar">
+          <Key>
+            <PropertyRef Name="kayit_id" />
+          </Key>
+          <Property Name="kayit_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" />
+          <Property Name="kitap_id" Type="int" />
+          <Property Name="alis_tarih" Type="datetime" />
+          <Property Name="son_tarih" Type="datetime" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
         <EntityType Name="kaynaklar">
           <Key>
             <PropertyRef Name="kaynak_id" />
@@ -40,10 +51,85 @@
           <Property Name="personel_kullaniciAd" Type="nvarchar" MaxLength="50" />
           <Property Name="personel_sfire" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_kayitlar_kaynaklar">
+          <End Role="kaynaklar" Type="Self.kaynaklar" Multiplicity="0..1" />
+          <End Role="kayitlar" Type="Self.kayitlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kaynaklar">
+              <PropertyRef Name="kaynak_id" />
+            </Principal>
+            <Dependent Role="kayitlar">
+              <PropertyRef Name="kitap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kayitlar_kullanicilar">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="0..1" />
+          <End Role="kayitlar" Type="Self.kayitlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="kullanici_id" />
+            </Principal>
+            <Dependent Role="kayitlar">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="kutupModelStoreContainer">
+          <EntitySet Name="kayitlar" EntityType="Self.kayitlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="kaynaklar" EntityType="Self.kaynaklar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="perskutupveritabani" EntityType="Self.perskutupveritabani" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_kayitlar_kaynaklar" Association="Self.FK_kayitlar_kaynaklar">
+            <End Role="kaynaklar" EntitySet="kaynaklar" />
+            <End Role="kayitlar" EntitySet="kayitlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kayitlar_kullanicilar" Association="Self.FK_kayitlar_kullanicilar">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kayitlar" EntitySet="kayitlar" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -65,7 +151,47 @@
         <EntityContainer Name="kutupEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="perskutupveritabani" EntityType="Self.perskutupveritabani" />
           <EntitySet Name="kullanicilar" EntityType="kutupModel.kullanicilar" />
+          <EntitySet Name="kayitlar" EntityType="kutupModel.kayitlar" />
+          <AssociationSet Name="FK_kayitlar_kullanicilar" Association="kutupModel.FK_kayitlar_kullanicilar">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kayitlar" EntitySet="kayitlar" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(kutupModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(kutupModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="kaynaklar" EntityType="kutupModel.kaynaklar" />
+          <AssociationSet Name="FK_kayitlar_kaynaklar" Association="kutupModel.FK_kayitlar_kaynaklar">
+            <End Role="kaynaklar" EntitySet="kaynaklar" />
+            <End Role="kayitlar" EntitySet="kayitlar" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="kutupModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="kullanicilar">
           <Key>
@@ -77,7 +203,59 @@
           <Property Name="kullanici_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="kayitlar" Relationship="kutupModel.FK_kayitlar_kullanicilar" FromRole="kullanicilar" ToRole="kayitlar" />
         </EntityType>
+        <EntityType Name="kayitlar">
+          <Key>
+            <PropertyRef Name="kayit_id" />
+          </Key>
+          <Property Name="kayit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_id" Type="Int32" />
+          <Property Name="kitap_id" Type="Int32" />
+          <Property Name="alis_tarih" Type="DateTime" Precision="3" />
+          <Property Name="son_tarih" Type="DateTime" Precision="3" />
+          <Property Name="durum" Type="Boolean" />
+          <NavigationProperty Name="kullanicilar" Relationship="kutupModel.FK_kayitlar_kullanicilar" FromRole="kayitlar" ToRole="kullanicilar" />
+          <NavigationProperty Name="kaynaklar" Relationship="kutupModel.FK_kayitlar_kaynaklar" FromRole="kayitlar" ToRole="kaynaklar" />
+        </EntityType>
+        <Association Name="FK_kayitlar_kullanicilar">
+          <End Type="kutupModel.kullanicilar" Role="kullanicilar" Multiplicity="0..1" />
+          <End Type="kutupModel.kayitlar" Role="kayitlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="kullanici_id" />
+            </Principal>
+            <Dependent Role="kayitlar">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ComplexType1">
+          <Property Type="DateTime" Name="kaynak_basımtarihi" Precision="3" />
+        </ComplexType>
+        <ComplexType Name="ComplexType2">
+          <Property Type="String" Name="kaynak_yayıncı" MaxLength="50" FixedLength="false" Unicode="true" />
+        </ComplexType>
+        <ComplexType Name="ComplexType3">
+          <Property Type="String" Name="kaynak_yayinci1" MaxLength="50" FixedLength="false" Unicode="true" />
+        </ComplexType>
+        <ComplexType Name="ComplexType4">
+          <Property Type="DateTime" Name="kaynak_basimtarihi1" Precision="3" />
+        </ComplexType>
+        <ComplexType Name="ComplexType5">
+          <Property Type="kutupModel.ComplexType1" Name="ComplexProperty" Nullable="false" />
+        </ComplexType>
         <EntityType Name="kaynaklar">
           <Key>
             <PropertyRef Name="kaynak_id" />
@@ -88,6 +266,29 @@
           <Property Name="kaynak_yayinci" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="kaynak_sayfasayisi" Type="Int32" />
           <Property Name="kaynak_basimtarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="kayitlar" Relationship="kutupModel.FK_kayitlar_kaynaklar" FromRole="kaynaklar" ToRole="kayitlar" />
+        </EntityType>
+        <Association Name="FK_kayitlar_kaynaklar">
+          <End Type="kutupModel.kaynaklar" Role="kaynaklar" Multiplicity="0..1" />
+          <End Type="kutupModel.kayitlar" Role="kayitlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kaynaklar">
+              <PropertyRef Name="kaynak_id" />
+            </Principal>
+            <Dependent Role="kayitlar">
+              <PropertyRef Name="kitap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -121,6 +322,42 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="kayitlar">
+            <EntityTypeMapping TypeName="kutupModel.kayitlar">
+              <MappingFragment StoreEntitySet="kayitlar">
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="son_tarih" ColumnName="son_tarih" />
+                <ScalarProperty Name="alis_tarih" ColumnName="alis_tarih" />
+                <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="kayit_id" ColumnName="kayit_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="kutupModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="kutupModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="kutupModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="kutupModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="kutupModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="kutupModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="kutupModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="kutupModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="kutupModel.Store.sp_upgraddiagrams" />
           <EntitySetMapping Name="kaynaklar">
             <EntityTypeMapping TypeName="kutupModel.kaynaklar">
               <MappingFragment StoreEntitySet="kaynaklar">
@@ -130,6 +367,17 @@
                 <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
                 <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
                 <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="kutupModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

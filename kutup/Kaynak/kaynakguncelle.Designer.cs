@@ -71,6 +71,7 @@
             this.kaynakaydetbtn.TabIndex = 22;
             this.kaynakaydetbtn.Text = "KAYDET";
             this.kaynakaydetbtn.UseVisualStyleBackColor = false;
+            this.kaynakaydetbtn.Click += new System.EventHandler(this.kaynakaydetbtn_Click);
             // 
             // label5
             // 
