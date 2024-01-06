@@ -85,6 +85,12 @@
     <Compile Include="kayitlar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Kayit\gerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kayit\gerial.Designer.cs">
+      <DependentUpon>gerial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kayit\odunc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IslemPaneli.resx">
       <DependentUpon>IslemPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kayit\gerial.resx">
+      <DependentUpon>gerial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kayit\odunc.resx">
       <DependentUpon>odunc.cs</DependentUpon>

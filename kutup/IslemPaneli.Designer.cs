@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.kaynaksilbtn = new System.Windows.Forms.Button();
             this.kaynakguncellebtn = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.kaynaksilbtn);
             this.panel1.Controls.Add(this.kaynakguncellebtn);
@@ -59,8 +61,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 681);
+            this.panel1.Size = new System.Drawing.Size(176, 728);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(-3, 643);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 72);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "        Kaynak Sil";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -219,14 +237,14 @@
             this.panelkullaniciadi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelkullaniciadi.Location = new System.Drawing.Point(176, 0);
             this.panelkullaniciadi.Name = "panelkullaniciadi";
-            this.panelkullaniciadi.Size = new System.Drawing.Size(1088, 59);
+            this.panelkullaniciadi.Size = new System.Drawing.Size(1328, 59);
             this.panelkullaniciadi.TabIndex = 1;
             // 
             // IslemPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1504, 728);
             this.Controls.Add(this.panelkullaniciadi);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -253,5 +271,6 @@
         private System.Windows.Forms.Button kaynakeklebtn;
         private System.Windows.Forms.Button kaynaklarbtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

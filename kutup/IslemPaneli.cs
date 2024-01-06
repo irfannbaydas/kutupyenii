@@ -141,5 +141,12 @@ namespace kutup
             oduncver.MdiParent = this;
             oduncver.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            gerial geri = new gerial();
+            geri.MdiParent = this;
+
+        }
     }
 }
