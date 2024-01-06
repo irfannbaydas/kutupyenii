@@ -27,6 +27,14 @@ namespace kutup
         {
             var  Kaynaklar = db.kaynaklar.ToList();
             dataGridView1.DataSource = Kaynaklar.ToList();
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[0].HeaderText = "Kaynak ID";
+            dataGridView1.Columns[1].HeaderText = "Kaynak Adı";
+            dataGridView1.Columns[2].HeaderText = "Kaynak Yazar";
+            dataGridView1.Columns[3].HeaderText = "Kaynak Yayıncı";
+            dataGridView1.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView1.Columns[5].HeaderText = "Basım Tarihi";
         }
     }
 }

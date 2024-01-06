@@ -21,6 +21,14 @@ namespace kutup
         {
             var kaynaklar = db.kaynaklar.ToList();
             dataGridView2.DataSource = kaynaklar.ToList();
+            dataGridView2.Columns[6].Visible = false;
+
+            dataGridView2.Columns[0].HeaderText = "Kaynak ID";
+            dataGridView2.Columns[1].HeaderText = "Kaynak Adı";
+            dataGridView2.Columns[2].HeaderText = "Kaynak Yazar";
+            dataGridView2.Columns[3].HeaderText = "Kaynak Yayıncı";
+            dataGridView2.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView2.Columns[5].HeaderText = "Basım Tarihi";
         }
 
         private void kaynaksilbtn_Click(object sender, EventArgs e)

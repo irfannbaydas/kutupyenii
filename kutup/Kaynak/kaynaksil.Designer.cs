@@ -39,9 +39,9 @@
             this.kaynaksilbtn.FlatAppearance.BorderSize = 0;
             this.kaynaksilbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kaynaksilbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynaksilbtn.Location = new System.Drawing.Point(20, 33);
+            this.kaynaksilbtn.Location = new System.Drawing.Point(20, 12);
             this.kaynaksilbtn.Name = "kaynaksilbtn";
-            this.kaynaksilbtn.Size = new System.Drawing.Size(177, 66);
+            this.kaynaksilbtn.Size = new System.Drawing.Size(264, 87);
             this.kaynaksilbtn.TabIndex = 0;
             this.kaynaksilbtn.Text = "SİL";
             this.kaynaksilbtn.UseVisualStyleBackColor = false;
@@ -53,7 +53,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(20, 122);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(745, 300);
+            this.dataGridView2.Size = new System.Drawing.Size(1232, 511);
             this.dataGridView2.TabIndex = 2;
             // 
             // kaynaksil
@@ -61,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.kaynaksilbtn);
             this.Name = "kaynaksil";

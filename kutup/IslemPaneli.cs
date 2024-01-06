@@ -1,4 +1,5 @@
-﻿using kutup.Kaynak;
+﻿using kutup.Kayit;
+using kutup.Kaynak;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,8 @@ namespace kutup
             kaynakeklebtn.Visible = false;
             kaynaksilbtn.Visible = false;
             kaynakguncellebtn.Visible = false;
+
+
             
         }
 
@@ -130,6 +133,13 @@ namespace kutup
             kaynakguncelle kguncelle = new kaynakguncelle();
             kguncelle.MdiParent = this;
             kguncelle.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            odunc oduncver = new odunc();
+            oduncver.MdiParent = this;
+            oduncver.Show();
         }
     }
 }

@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(53, 60);
+            this.label1.Location = new System.Drawing.Point(40, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 23);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(32, 100);
+            this.label2.Location = new System.Drawing.Point(19, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 23);
             this.label2.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(54, 148);
+            this.label3.Location = new System.Drawing.Point(41, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 23);
             this.label3.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(25, 193);
+            this.label4.Location = new System.Drawing.Point(12, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 23);
             this.label4.TabIndex = 4;
@@ -86,11 +86,13 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(82, 297);
+            this.button1.Location = new System.Drawing.Point(55, 297);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 40);
+            this.button1.Size = new System.Drawing.Size(161, 56);
             this.button1.TabIndex = 9;
             this.button1.Text = "KAYDET";
             this.button1.UseVisualStyleBackColor = false;
@@ -102,14 +104,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(253, 63);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(955, 532);
             this.dataGridView1.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(42, 242);
+            this.label5.Location = new System.Drawing.Point(29, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 23);
             this.label5.TabIndex = 11;
@@ -117,45 +119,45 @@
             // 
             // kuladtxt
             // 
-            this.kuladtxt.BackColor = System.Drawing.Color.SlateGray;
+            this.kuladtxt.BackColor = System.Drawing.SystemColors.Window;
             this.kuladtxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.kuladtxt.Location = new System.Drawing.Point(93, 63);
+            this.kuladtxt.Location = new System.Drawing.Point(80, 63);
             this.kuladtxt.Name = "kuladtxt";
             this.kuladtxt.Size = new System.Drawing.Size(126, 20);
             this.kuladtxt.TabIndex = 12;
             // 
             // kulsoyadtxt
             // 
-            this.kulsoyadtxt.BackColor = System.Drawing.Color.SlateGray;
+            this.kulsoyadtxt.BackColor = System.Drawing.SystemColors.Window;
             this.kulsoyadtxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.kulsoyadtxt.Location = new System.Drawing.Point(93, 103);
+            this.kulsoyadtxt.Location = new System.Drawing.Point(80, 103);
             this.kulsoyadtxt.Name = "kulsoyadtxt";
             this.kulsoyadtxt.Size = new System.Drawing.Size(126, 20);
             this.kulsoyadtxt.TabIndex = 13;
             // 
             // kultctxt
             // 
-            this.kultctxt.BackColor = System.Drawing.Color.SlateGray;
+            this.kultctxt.BackColor = System.Drawing.SystemColors.Window;
             this.kultctxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.kultctxt.Location = new System.Drawing.Point(93, 152);
+            this.kultctxt.Location = new System.Drawing.Point(80, 152);
             this.kultctxt.Name = "kultctxt";
             this.kultctxt.Size = new System.Drawing.Size(126, 20);
             this.kultctxt.TabIndex = 14;
             // 
             // kulteltxt
             // 
-            this.kulteltxt.BackColor = System.Drawing.Color.SlateGray;
+            this.kulteltxt.BackColor = System.Drawing.SystemColors.Window;
             this.kulteltxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.kulteltxt.Location = new System.Drawing.Point(93, 196);
+            this.kulteltxt.Location = new System.Drawing.Point(80, 196);
             this.kulteltxt.Name = "kulteltxt";
             this.kulteltxt.Size = new System.Drawing.Size(126, 20);
             this.kulteltxt.TabIndex = 15;
             // 
             // kulmailtxt
             // 
-            this.kulmailtxt.BackColor = System.Drawing.Color.SlateGray;
+            this.kulmailtxt.BackColor = System.Drawing.SystemColors.Window;
             this.kulmailtxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.kulmailtxt.Location = new System.Drawing.Point(93, 246);
+            this.kulmailtxt.Location = new System.Drawing.Point(80, 246);
             this.kulmailtxt.Name = "kulmailtxt";
             this.kulmailtxt.Size = new System.Drawing.Size(126, 20);
             this.kulmailtxt.TabIndex = 16;
@@ -165,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(924, 548);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.kulmailtxt);
             this.Controls.Add(this.kulteltxt);
             this.Controls.Add(this.kultctxt);

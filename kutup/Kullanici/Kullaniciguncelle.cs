@@ -31,6 +31,14 @@ namespace kutup
         private void Kullaniciguncelle_Load(object sender, EventArgs e)
         {
             Listele();
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[0].HeaderText = "Kullanıcı ID";
+            dataGridView1.Columns[1].HeaderText = "Kullanıcı Adı";
+            dataGridView1.Columns[2].HeaderText = "Kullanıcı Soyad";
+            dataGridView1.Columns[3].HeaderText = "Kullanıcı TC";
+            dataGridView1.Columns[4].HeaderText = "Kullanıcı Telefon";
+            dataGridView1.Columns[5].HeaderText = "Kullanıcı Mail";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

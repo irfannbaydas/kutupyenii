@@ -46,21 +46,21 @@
             // 
             // adKaynaktxt
             // 
-            this.adKaynaktxt.Location = new System.Drawing.Point(109, 101);
+            this.adKaynaktxt.Location = new System.Drawing.Point(110, 74);
             this.adKaynaktxt.Name = "adKaynaktxt";
             this.adKaynaktxt.Size = new System.Drawing.Size(122, 20);
             this.adKaynaktxt.TabIndex = 0;
             // 
             // yazarKaynaktxt
             // 
-            this.yazarKaynaktxt.Location = new System.Drawing.Point(109, 136);
+            this.yazarKaynaktxt.Location = new System.Drawing.Point(110, 109);
             this.yazarKaynaktxt.Name = "yazarKaynaktxt";
             this.yazarKaynaktxt.Size = new System.Drawing.Size(122, 20);
             this.yazarKaynaktxt.TabIndex = 1;
             // 
             // yayinciKaynaktxt
             // 
-            this.yayinciKaynaktxt.Location = new System.Drawing.Point(109, 170);
+            this.yayinciKaynaktxt.Location = new System.Drawing.Point(110, 143);
             this.yayinciKaynaktxt.Name = "yayinciKaynaktxt";
             this.yayinciKaynaktxt.Size = new System.Drawing.Size(122, 20);
             this.yayinciKaynaktxt.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(69, 101);
+            this.label1.Location = new System.Drawing.Point(70, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 23);
             this.label1.TabIndex = 5;
@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(49, 133);
+            this.label2.Location = new System.Drawing.Point(50, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 23);
             this.label2.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(41, 170);
+            this.label3.Location = new System.Drawing.Point(42, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 23);
             this.label3.TabIndex = 7;
@@ -99,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(54, 207);
+            this.label4.Location = new System.Drawing.Point(55, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 23);
             this.label4.TabIndex = 8;
@@ -109,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(8, 243);
+            this.label5.Location = new System.Drawing.Point(9, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 23);
             this.label5.TabIndex = 9;
@@ -121,7 +121,7 @@
             this.kaynakaydetbtn.FlatAppearance.BorderSize = 0;
             this.kaynakaydetbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kaynakaydetbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
-            this.kaynakaydetbtn.Location = new System.Drawing.Point(67, 299);
+            this.kaynakaydetbtn.Location = new System.Drawing.Point(68, 272);
             this.kaynakaydetbtn.Name = "kaynakaydetbtn";
             this.kaynakaydetbtn.Size = new System.Drawing.Size(163, 55);
             this.kaynakaydetbtn.TabIndex = 11;
@@ -131,14 +131,14 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 243);
+            this.numericUpDown1.Location = new System.Drawing.Point(110, 216);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(136, 20);
             this.numericUpDown1.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 207);
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 180);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 20);
             this.dateTimePicker1.TabIndex = 13;
@@ -146,10 +146,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SlateGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(297, 73);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(899, 524);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -158,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(990, 495);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.numericUpDown1);
