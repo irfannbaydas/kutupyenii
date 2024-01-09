@@ -37,5 +37,10 @@ namespace kutup
             dataGridView1.Columns[4].HeaderText = "Kullanıcı Telefon";
             dataGridView1.Columns[5].HeaderText = "Kullanıcı Mail";
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

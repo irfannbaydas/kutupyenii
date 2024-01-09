@@ -61,5 +61,10 @@ namespace kutup
         {
 
         }
+
+        private void kuladtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

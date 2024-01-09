@@ -95,7 +95,9 @@
             // personelgirisbtn
             // 
             this.personelgirisbtn.BackColor = System.Drawing.Color.Lime;
-            this.personelgirisbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.75F, System.Drawing.FontStyle.Bold);
+            this.personelgirisbtn.FlatAppearance.BorderSize = 0;
+            this.personelgirisbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.personelgirisbtn.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 15.75F, System.Drawing.FontStyle.Bold);
             this.personelgirisbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.personelgirisbtn.Location = new System.Drawing.Point(122, 296);
             this.personelgirisbtn.Margin = new System.Windows.Forms.Padding(2);

@@ -146,7 +146,7 @@ namespace kutup
         {
             gerial geri = new gerial();
             geri.MdiParent = this;
-
+            geri.Show();
         }
     }
 }

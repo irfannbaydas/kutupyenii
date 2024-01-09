@@ -120,16 +120,17 @@
             // kuladtxt
             // 
             this.kuladtxt.BackColor = System.Drawing.SystemColors.Window;
-            this.kuladtxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.kuladtxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.kuladtxt.Location = new System.Drawing.Point(80, 63);
             this.kuladtxt.Name = "kuladtxt";
             this.kuladtxt.Size = new System.Drawing.Size(126, 20);
             this.kuladtxt.TabIndex = 12;
+            this.kuladtxt.TextChanged += new System.EventHandler(this.kuladtxt_TextChanged);
             // 
             // kulsoyadtxt
             // 
             this.kulsoyadtxt.BackColor = System.Drawing.SystemColors.Window;
-            this.kulsoyadtxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.kulsoyadtxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.kulsoyadtxt.Location = new System.Drawing.Point(80, 103);
             this.kulsoyadtxt.Name = "kulsoyadtxt";
             this.kulsoyadtxt.Size = new System.Drawing.Size(126, 20);
@@ -138,7 +139,7 @@
             // kultctxt
             // 
             this.kultctxt.BackColor = System.Drawing.SystemColors.Window;
-            this.kultctxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.kultctxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.kultctxt.Location = new System.Drawing.Point(80, 152);
             this.kultctxt.Name = "kultctxt";
             this.kultctxt.Size = new System.Drawing.Size(126, 20);
@@ -147,7 +148,7 @@
             // kulteltxt
             // 
             this.kulteltxt.BackColor = System.Drawing.SystemColors.Window;
-            this.kulteltxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.kulteltxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.kulteltxt.Location = new System.Drawing.Point(80, 196);
             this.kulteltxt.Name = "kulteltxt";
             this.kulteltxt.Size = new System.Drawing.Size(126, 20);
@@ -156,7 +157,7 @@
             // kulmailtxt
             // 
             this.kulmailtxt.BackColor = System.Drawing.SystemColors.Window;
-            this.kulmailtxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.kulmailtxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.kulmailtxt.Location = new System.Drawing.Point(80, 246);
             this.kulmailtxt.Name = "kulmailtxt";
             this.kulmailtxt.Size = new System.Drawing.Size(126, 20);

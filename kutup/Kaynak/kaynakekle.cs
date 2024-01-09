@@ -57,5 +57,10 @@ namespace kutup.Kaynak
             dataGridView1.Columns[4].HeaderText = "Sayfa Sayısı";
             dataGridView1.Columns[5].HeaderText = "Basım Tarihi";
         }
+
+        private void yayinciKaynaktxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
